@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  /* Paleta inspirada en la naturaleza: verdes profundos, arcilla y crema cálido */
+  --color-cream: #faf6ef;
+  --color-cream-soft: #f2ece0;
+  --color-ink: #1e2a20;
+  --color-forest: #2f4a3d;
+  --color-forest-dark: #16241c;
+  --color-sage: #8fa98c;
+  --color-sage-light: #d9e4d4;
+  --color-clay: #c97a55;
+  --color-clay-dark: #a9603f;
+
+  --background: var(--color-cream);
+  --foreground: var(--color-ink);
+  --font-body: "Calibri", "Candara", var(--font-body-fallback), ui-sans-serif,
+    system-ui, -apple-system, sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-cream: var(--color-cream);
+  --color-cream-soft: var(--color-cream-soft);
+  --color-ink: var(--color-ink);
+  --color-forest: var(--color-forest);
+  --color-forest-dark: var(--color-forest-dark);
+  --color-sage: var(--color-sage);
+  --color-sage-light: var(--color-sage-light);
+  --color-clay: var(--color-clay);
+  --color-clay-dark: var(--color-clay-dark);
+  --font-sans: var(--font-body);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+::selection {
+  background: var(--color-sage-light);
+  color: var(--color-forest-dark);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-clay);
+  outline-offset: 2px;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(3%, -4%) scale(1.06);
+  }
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+.animate-drift {
+  animation: drift 14s ease-in-out infinite;
+}
+
+.animate-drift-slow {
+  animation: drift 20s ease-in-out infinite reverse;
+}
+
+.animate-float {
+  animation: float-y 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-drift,
+  .animate-drift-slow,
+  .animate-float {
+    animation: none;
+  }
+}
