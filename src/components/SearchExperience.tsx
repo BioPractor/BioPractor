@@ -55,7 +55,7 @@ export default function SearchExperience({ products }: { products: Product[] }) 
           <p className="text-ink/70">
             No encontramos resultados para &ldquo;{query}&rdquo;. Intenta con
             otra palabra o revisa el{" "}
-            <Link href="/catalogo" className="font-semibold text-clay-dark hover:underline">
+            <Link href="/catalogo" className="font-semibold text-sky-dark hover:underline">
               catálogo completo
             </Link>
             .

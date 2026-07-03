@@ -46,7 +46,7 @@ export default async function ProductPage({
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
-      <Link href="/catalogo" className="text-sm font-semibold text-clay-dark hover:underline">
+      <Link href="/catalogo" className="text-sm font-semibold text-sky-dark hover:underline">
         ← Volver al catálogo
       </Link>
 

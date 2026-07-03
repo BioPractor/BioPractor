@@ -78,7 +78,7 @@ export default async function AdminDashboardPage() {
                   <div className="flex items-center gap-3">
                     <Link
                       href={`/admin/productos/${product.id}/editar`}
-                      className="font-semibold text-clay-dark hover:underline"
+                      className="font-semibold text-sky-dark hover:underline"
                     >
                       Editar
                     </Link>
@@ -97,7 +97,7 @@ export default async function AdminDashboardPage() {
         {products.length === 0 && (
           <p className="px-4 py-8 text-center text-ink/60">
             Todavía no hay productos activos.{" "}
-            <Link href="/admin/productos/nuevo" className="font-semibold text-clay-dark hover:underline">
+            <Link href="/admin/productos/nuevo" className="font-semibold text-sky-dark hover:underline">
               Crea el primero
             </Link>
             .

@@ -1,16 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  /* Paleta inspirada en la naturaleza: verdes profundos, arcilla y crema cálido */
+  /* Paleta inspirada en la naturaleza: verde vivo, arcilla, crema cálido y
+     detalles en azul (color favorito del cliente). */
   --color-cream: #faf6ef;
   --color-cream-soft: #f2ece0;
   --color-ink: #1e2a20;
-  --color-forest: #2f4a3d;
-  --color-forest-dark: #16241c;
+  --color-forest: #2fa968;
+  --color-forest-dark: #146b45;
   --color-sage: #8fa98c;
   --color-sage-light: #d9e4d4;
   --color-clay: #c97a55;
   --color-clay-dark: #a9603f;
+  --color-sky: #2f80ed;
+  --color-sky-dark: #1d4ed8;
 
   --background: var(--color-cream);
   --foreground: var(--color-ink);
@@ -30,6 +33,8 @@
   --color-sage-light: var(--color-sage-light);
   --color-clay: var(--color-clay);
   --color-clay-dark: var(--color-clay-dark);
+  --color-sky: var(--color-sky);
+  --color-sky-dark: var(--color-sky-dark);
   --font-sans: var(--font-body);
 }
 
@@ -44,7 +49,7 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-clay);
+  outline: 2px solid var(--color-sky);
   outline-offset: 2px;
 }
 

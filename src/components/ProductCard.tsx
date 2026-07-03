@@ -16,7 +16,7 @@ export default function ProductCard({ product }: { product: Product }) {
     >
       <ProductImage product={product} className="h-40 w-full" />
       <div className="flex flex-1 flex-col gap-2 p-4">
-        <h3 className="font-bold text-forest-dark group-hover:text-clay-dark">
+        <h3 className="font-bold text-forest-dark group-hover:text-sky-dark">
           {product.name}
         </h3>
         <p className="text-sm text-ink/70">{product.shortDescription}</p>
@@ -24,7 +24,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <span className="font-extrabold text-forest-dark">
             {currency.format(product.price)}
           </span>
-          <span className="text-sm font-semibold text-clay-dark">
+          <span className="text-sm font-semibold text-sky-dark">
             Más información →
           </span>
         </div>

@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: "Nuevo producto" };
 export default function NewProductPage() {
   return (
     <div>
-      <Link href="/admin" className="text-sm font-semibold text-clay-dark hover:underline">
+      <Link href="/admin" className="text-sm font-semibold text-sky-dark hover:underline">
         ← Volver a productos
       </Link>
 

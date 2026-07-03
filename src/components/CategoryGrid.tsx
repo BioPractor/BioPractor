@@ -19,7 +19,7 @@ export default function CategoryGrid() {
             href={`/catalogo?categoria=${category.slug}`}
             className="group flex flex-col justify-between gap-3 rounded-2xl border border-sage-light/60 bg-white/60 p-5 transition-shadow hover:shadow-lg hover:shadow-forest/10"
           >
-            <span className="text-base font-bold text-forest-dark group-hover:text-clay-dark">
+            <span className="text-base font-bold text-forest-dark group-hover:text-sky-dark">
               {category.name}
             </span>
             <span className="text-sm text-ink/70">{category.description}</span>

@@ -16,7 +16,7 @@ export default function CategoryFilter({
         aria-current={!activeCategory ? "true" : undefined}
         className={`whitespace-nowrap rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
           !activeCategory
-            ? "border-forest-dark bg-forest-dark text-cream"
+            ? "border-sky-dark bg-sky-dark text-cream"
             : "border-sage-light text-ink hover:border-forest"
         }`}
       >
@@ -31,7 +31,7 @@ export default function CategoryFilter({
             aria-current={isActive ? "true" : undefined}
             className={`whitespace-nowrap rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
               isActive
-                ? "border-forest-dark bg-forest-dark text-cream"
+                ? "border-sky-dark bg-sky-dark text-cream"
                 : "border-sage-light text-ink hover:border-forest"
             }`}
           >

@@ -29,7 +29,7 @@ export default async function Home() {
             </div>
             <Link
               href="/catalogo"
-              className="text-sm font-bold text-clay-dark hover:underline"
+              className="text-sm font-bold text-sky-dark hover:underline"
             >
               Ver catálogo completo →
             </Link>
