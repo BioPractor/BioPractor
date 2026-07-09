@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mulish } from "next/font/google";
+import { Mulish, Fraunces } from "next/font/google";
 import "./globals.css";
 
 // Calibri no está disponible como fuente web con licencia abierta, así que se
@@ -9,6 +9,16 @@ const mulish = Mulish({
   variable: "--font-body-fallback",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
+});
+
+// Fraunces: serif "editorial" con formas orgánicas, ideal para el tono
+// natural/premium de la marca. Se usa solo en títulos (clase font-display).
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${mulish.variable} h-full antialiased`}>
+    <html lang="es" className={`${mulish.variable} ${fraunces.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-cream text-ink font-sans">
         {children}
       </body>

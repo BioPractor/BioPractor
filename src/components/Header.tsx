@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const NAV_LINKS = [
   { href: "/", label: "Inicio" },
@@ -12,28 +13,73 @@ const NAV_LINKS = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-sage-light/60 bg-cream/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
+    <header
+      className={`sticky top-0 z-40 transition-all duration-300 ${
+        scrolled || open
+          ? "glass border-b border-sage-light/50 shadow-sm shadow-forest-dark/5"
+          : "border-b border-transparent bg-cream/40 backdrop-blur-sm"
+      }`}
+    >
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 sm:px-6">
         <Link
           href="/"
-          className="text-lg font-extrabold tracking-tight text-forest-dark"
+          className="group flex items-center gap-2"
           onClick={() => setOpen(false)}
         >
-          BioPractor
+          <span
+            aria-hidden="true"
+            className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-forest to-sky-dark text-cream shadow-sm transition-transform group-hover:scale-105"
+          >
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
+              <path d="M12 2C7 2 3 6.5 3 12c0 5.79 4.61 9.5 8.5 10 .1-1.28.06-2.55-.16-3.71C15.9 17.4 20 13.9 20 8.5 20 5.5 17 2 12 2Z" />
+            </svg>
+          </span>
+          <span className="font-display text-xl font-semibold tracking-tight text-forest-dark">
+            BioPractor
+          </span>
         </Link>
 
-        <nav className="hidden gap-8 md:flex" aria-label="Navegación principal">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-semibold text-ink transition-colors hover:text-sky-dark"
-            >
-              {link.label}
-            </Link>
-          ))}
+        <nav
+          className="hidden items-center gap-1 md:flex"
+          aria-label="Navegación principal"
+        >
+          {NAV_LINKS.map((link) => {
+            const active =
+              link.href === "/"
+                ? pathname === "/"
+                : pathname.startsWith(link.href);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={active ? "page" : undefined}
+                className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+                  active
+                    ? "bg-forest-dark/10 text-forest-dark"
+                    : "text-ink/80 hover:text-sky-dark"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+          <Link
+            href="/contacto"
+            className="ml-2 rounded-full bg-gradient-to-r from-forest to-sky-dark px-5 py-2 text-sm font-bold text-white shadow-sm transition-transform hover:scale-105"
+          >
+            Agenda tu cita
+          </Link>
         </nav>
 
         <button
@@ -54,7 +100,7 @@ export default function Header() {
         <nav
           id="mobile-menu"
           aria-label="Navegación móvil"
-          className="border-t border-sage-light/60 bg-cream md:hidden"
+          className="border-t border-sage-light/50 md:hidden"
         >
           <ul className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3 sm:px-6">
             {NAV_LINKS.map((link) => (
@@ -62,12 +108,21 @@ export default function Header() {
                 <Link
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-lg px-3 py-3 text-base font-semibold text-ink hover:bg-sage-light/50"
+                  className="block rounded-xl px-3 py-3 text-base font-semibold text-ink hover:bg-sage-light/50"
                 >
                   {link.label}
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                href="/contacto"
+                onClick={() => setOpen(false)}
+                className="mt-1 block rounded-xl bg-gradient-to-r from-forest to-sky-dark px-3 py-3 text-center text-base font-bold text-white"
+              >
+                Agenda tu cita
+              </Link>
+            </li>
           </ul>
         </nav>
       )}

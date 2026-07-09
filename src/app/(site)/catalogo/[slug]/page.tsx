@@ -45,15 +45,15 @@ export default async function ProductPage({
     .filter(Boolean);
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
+    <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
       <Link href="/catalogo" className="text-sm font-semibold text-sky-dark hover:underline">
         ← Volver al catálogo
       </Link>
 
-      <div className="mt-6 grid gap-8 md:grid-cols-2">
+      <div className="mt-8 grid gap-10 md:grid-cols-2">
         <ProductImage
           product={product}
-          className="h-72 w-full rounded-3xl sm:h-96"
+          className="aspect-square w-full rounded-[2rem] border border-sage-light/50 shadow-xl shadow-forest-dark/5"
         />
 
         <div className="flex flex-col gap-4">
@@ -69,13 +69,13 @@ export default async function ProductPage({
             ))}
           </div>
 
-          <h1 className="text-3xl font-extrabold text-forest-dark">
+          <h1 className="font-display text-3xl font-semibold text-forest-dark sm:text-4xl">
             {product.name}
           </h1>
-          <p className="text-sm font-semibold text-ink/70">
+          <p className="text-sm font-semibold text-ink/60">
             Referencia {product.reference}
           </p>
-          <p className="text-2xl font-extrabold text-clay">
+          <p className="font-display text-3xl font-semibold text-gradient">
             {currency.format(product.price)}
           </p>
           <p className="leading-relaxed text-ink/80">{product.description}</p>
@@ -83,7 +83,7 @@ export default async function ProductPage({
           <WhatsAppCTAButton
             href={productWhatsAppLink(product.name, product.reference)}
             slug={product.slug}
-            className="mt-2 inline-flex w-fit items-center justify-center rounded-full bg-forest-dark px-8 py-3 text-sm font-bold text-cream transition-transform hover:scale-105"
+            className="mt-2 inline-flex w-fit items-center justify-center gap-2 rounded-full bg-gradient-to-r from-forest to-sky-dark px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-sky-dark/20 transition-transform hover:scale-105"
           >
             Más información
           </WhatsAppCTAButton>

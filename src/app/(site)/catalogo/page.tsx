@@ -28,9 +28,14 @@ export default async function CatalogoPage({
   const categoryInfo = activeCategory ? getCategoryBySlug(activeCategory) : undefined;
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-      <h1 className="text-3xl font-extrabold text-forest-dark">Catálogo</h1>
-      <p className="mt-2 max-w-2xl text-ink/70">
+    <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+      <span className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-dark">
+        {categoryInfo ? "Categoría" : "Todo el catálogo"}
+      </span>
+      <h1 className="mt-3 font-display text-4xl font-semibold text-forest-dark sm:text-5xl">
+        {categoryInfo ? categoryInfo.name : "Catálogo"}
+      </h1>
+      <p className="mt-4 max-w-2xl text-lg text-ink/70">
         {categoryInfo
           ? categoryInfo.description
           : "Todos nuestros productos, organizados para que encuentres justo lo que necesitas."}

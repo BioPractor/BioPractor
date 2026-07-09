@@ -14,13 +14,16 @@ export default async function BusquedaPage() {
   const products = await listActiveProducts();
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-      <h1 className="text-3xl font-extrabold text-forest-dark">
+    <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+      <span className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-dark">
+        Búsqueda
+      </span>
+      <h1 className="mt-3 font-display text-4xl font-semibold text-forest-dark sm:text-5xl">
         ¿Qué estás buscando?
       </h1>
-      <p className="mt-2 max-w-2xl text-ink/70">
+      <p className="mt-4 max-w-2xl text-lg text-ink/70">
         Escribe una necesidad, un ingrediente o una categoría — por ejemplo
-        &ldquo;cabeza&rdquo;, &ldquo;masaje&rdquo; o &ldquo;sueño&rdquo;.
+        &ldquo;energía&rdquo;, &ldquo;sueño&rdquo; o &ldquo;colágeno&rdquo;.
       </p>
 
       <SearchExperience products={products} />

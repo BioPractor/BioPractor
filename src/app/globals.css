@@ -6,6 +6,7 @@
   --color-cream: #faf6ef;
   --color-cream-soft: #f2ece0;
   --color-ink: #1e2a20;
+  --color-ink-deep: #0b1a12;
   --color-forest: #2fa968;
   --color-forest-dark: #146b45;
   --color-sage: #8fa98c;
@@ -14,6 +15,7 @@
   --color-clay-dark: #a9603f;
   --color-sky: #2f80ed;
   --color-sky-dark: #1d4ed8;
+  --color-sky-light: #7db3ff;
 
   --background: var(--color-cream);
   --foreground: var(--color-ink);
@@ -27,6 +29,7 @@
   --color-cream: var(--color-cream);
   --color-cream-soft: var(--color-cream-soft);
   --color-ink: var(--color-ink);
+  --color-ink-deep: var(--color-ink-deep);
   --color-forest: var(--color-forest);
   --color-forest-dark: var(--color-forest-dark);
   --color-sage: var(--color-sage);
@@ -35,7 +38,10 @@
   --color-clay-dark: var(--color-clay-dark);
   --color-sky: var(--color-sky);
   --color-sky-dark: var(--color-sky-dark);
+  --color-sky-light: var(--color-sky-light);
   --font-sans: var(--font-body);
+  --font-display: var(--font-fraunces), ui-serif, Georgia, "Times New Roman",
+    serif;
 }
 
 body {
@@ -44,14 +50,54 @@ body {
 }
 
 ::selection {
-  background: var(--color-sage-light);
-  color: var(--color-forest-dark);
+  background: var(--color-sky);
+  color: #fff;
 }
 
 :focus-visible {
   outline: 2px solid var(--color-sky);
   outline-offset: 2px;
 }
+
+/* ---------- Utilidades de marca ---------- */
+
+/* Texto con degradado verde -> azul (acento del cliente) */
+.text-gradient {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-forest) 0%,
+    var(--color-sky) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Superficie de vidrio esmerilado */
+.glass {
+  background: color-mix(in oklab, var(--color-cream) 70%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.glass-dark {
+  background: color-mix(in oklab, var(--color-ink-deep) 45%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Textura de grano de película sutil (encima de secciones oscuras) */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Animaciones ---------- */
 
 @keyframes drift {
   0%,
@@ -73,6 +119,43 @@ body {
   }
 }
 
+/* Malla de gradiente que "respira" para el hero (efecto video) */
+@keyframes aurora {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  33% {
+    transform: translate(4%, -3%) scale(1.12) rotate(4deg);
+  }
+  66% {
+    transform: translate(-3%, 4%) scale(1.05) rotate(-3deg);
+  }
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 0.4;
+  }
+}
+
 .animate-drift {
   animation: drift 14s ease-in-out infinite;
 }
@@ -85,10 +168,51 @@ body {
   animation: float-y 6s ease-in-out infinite;
 }
 
+.animate-aurora {
+  animation: aurora 18s ease-in-out infinite;
+}
+
+.animate-aurora-slow {
+  animation: aurora 26s ease-in-out infinite reverse;
+}
+
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+.animate-bob {
+  animation: bob 2.2s ease-in-out infinite;
+}
+
+/* ---------- Reveal al hacer scroll ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-drift,
   .animate-drift-slow,
-  .animate-float {
+  .animate-float,
+  .animate-aurora,
+  .animate-aurora-slow,
+  .animate-marquee,
+  .animate-bob {
     animation: none;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

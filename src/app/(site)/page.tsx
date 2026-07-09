@@ -1,9 +1,13 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
+import Marquee from "@/components/Marquee";
 import CategoryGrid from "@/components/CategoryGrid";
 import ProductCard from "@/components/ProductCard";
+import Philosophy from "@/components/Philosophy";
+import Showcase from "@/components/Showcase";
+import CtaBanner from "@/components/CtaBanner";
+import Reveal from "@/components/Reveal";
 import { listFeaturedProducts } from "@/lib/db/products";
-import { generalWhatsAppLink } from "@/lib/whatsapp";
 
 export const dynamic = "force-dynamic";
 
@@ -14,73 +18,49 @@ export default async function Home() {
     <>
       <Hero />
 
+      <Marquee />
+
       <CategoryGrid />
 
-      <section className="bg-cream-soft py-16">
+      <section className="bg-cream-soft py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
-            <div>
-              <h2 className="text-2xl font-extrabold text-forest-dark sm:text-3xl">
-                Productos destacados
-              </h2>
-              <p className="mt-2 max-w-xl text-ink/70">
-                Una selección para empezar tu camino de autocuidado.
-              </p>
+          <Reveal>
+            <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+              <div>
+                <span className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-dark">
+                  Selección
+                </span>
+                <h2 className="mt-3 font-display text-3xl font-semibold text-forest-dark sm:text-4xl lg:text-5xl">
+                  Productos destacados
+                </h2>
+                <p className="mt-4 max-w-xl text-lg text-ink/70">
+                  Una selección para empezar tu camino de autocuidado.
+                </p>
+              </div>
+              <Link
+                href="/catalogo"
+                className="inline-flex items-center gap-2 rounded-full border border-forest-dark/20 px-5 py-2.5 text-sm font-bold text-forest-dark transition-colors hover:border-sky hover:text-sky-dark"
+              >
+                Ver catálogo completo →
+              </Link>
             </div>
-            <Link
-              href="/catalogo"
-              className="text-sm font-bold text-sky-dark hover:underline"
-            >
-              Ver catálogo completo →
-            </Link>
-          </div>
+          </Reveal>
 
-          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {featured.map((product) => (
-              <ProductCard key={product.slug} product={product} />
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {featured.map((product, i) => (
+              <Reveal key={product.slug} delay={(i % 3) * 90}>
+                <ProductCard product={product} />
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6">
-        <h2 className="text-2xl font-extrabold text-forest-dark sm:text-3xl">
-          No vendemos productos, abrimos caminos
-        </h2>
-        <p className="mt-4 text-lg text-ink/70">
-          Cada producto de BioPractor es una oportunidad de autoayuda: una
-          forma sencilla y natural de escuchar a tu cuerpo, cuidar tu mente y
-          construir hábitos de bienestar que duran.
-        </p>
-      </section>
+      <Philosophy />
 
-      <section className="bg-forest-dark py-16 text-cream">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 text-center sm:px-6">
-          <h2 className="text-2xl font-extrabold sm:text-3xl">
-            ¿Prefieres que te asesoremos?
-          </h2>
-          <p className="max-w-xl text-sage-light">
-            Agenda una cita o escríbenos directamente y te ayudamos a
-            encontrar el producto ideal para lo que necesitas.
-          </p>
-          <div className="mt-2 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href="/contacto"
-              className="rounded-full bg-clay-dark px-6 py-3 text-sm font-bold text-white transition-transform hover:scale-105"
-            >
-              Agendar cita
-            </Link>
-            <a
-              href={generalWhatsAppLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-cream/40 px-6 py-3 text-sm font-bold text-cream transition-colors hover:bg-cream/10"
-            >
-              Más información
-            </a>
-          </div>
-        </div>
-      </section>
+      <Showcase />
+
+      <CtaBanner />
     </>
   );
 }
