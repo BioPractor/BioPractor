@@ -1,9 +1,9 @@
 import Reveal from "./Reveal";
 
-// Para mostrar un video temático real, sube el archivo a public/ (por ejemplo
-// public/showcase.mp4) y pon su ruta aquí. Mientras esté vacío se muestra una
-// escena de gradiente animada que evoca la naturaleza en movimiento.
-const SHOWCASE_VIDEO_SRC = "";
+// Video temático de la sección. Archivo en public/showcase.mp4 (gotas de
+// agua sobre hojas verdes, banco gratuito Pexels, uso comercial sin
+// atribución). Vacío = escena de gradiente animada de reemplazo.
+const SHOWCASE_VIDEO_SRC = "/showcase.mp4";
 
 export default function Showcase() {
   return (
@@ -41,14 +41,21 @@ export default function Showcase() {
         <Reveal delay={120}>
           <div className="grain relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-sage-light/50 bg-ink-deep shadow-2xl shadow-forest-dark/20 sm:aspect-video lg:aspect-[4/5]">
             {SHOWCASE_VIDEO_SRC ? (
-              <video
-                className="absolute inset-0 h-full w-full object-cover"
-                autoPlay
-                muted
-                loop
-                playsInline
-                src={SHOWCASE_VIDEO_SRC}
-              />
+              <>
+                <video
+                  className="absolute inset-0 h-full w-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  src={SHOWCASE_VIDEO_SRC}
+                />
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 bg-gradient-to-t from-ink-deep/70 via-transparent to-ink-deep/20"
+                />
+              </>
             ) : (
               <div aria-hidden="true" className="absolute inset-0">
                 <div className="absolute inset-0 bg-gradient-to-br from-forest-dark via-ink-deep to-sky-dark" />

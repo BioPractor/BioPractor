@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { generalWhatsAppLink } from "@/lib/whatsapp";
 
-// Para usar un video real de fondo, sube el archivo a public/ (por ejemplo
-// public/hero.mp4) y pon aquí su ruta: HERO_VIDEO_SRC = "/hero.mp4".
-// Mientras esté vacío, se muestra una malla de gradiente animada que da
-// sensación de movimiento tipo video sin depender de ningún archivo.
-const HERO_VIDEO_SRC = "";
+// Video de fondo del hero. Archivo en public/hero.mp4 (luz entre hojas,
+// banco gratuito Pexels, uso comercial sin atribución). Para cambiarlo,
+// reemplaza el archivo o pon otra ruta aquí. Si se deja vacío, se muestra
+// solo la malla de gradiente animada.
+const HERO_VIDEO_SRC = "/hero.mp4";
 
 const STATS = [
   { value: "150+", label: "productos naturales" },
@@ -28,19 +28,25 @@ export default function Hero() {
       {/* Video de fondo opcional */}
       {HERO_VIDEO_SRC && (
         <video
-          className="absolute inset-0 h-full w-full object-cover opacity-40"
+          className="absolute inset-0 h-full w-full object-cover opacity-55 mix-blend-luminosity"
           autoPlay
           muted
           loop
           playsInline
+          preload="auto"
+          poster=""
           src={HERO_VIDEO_SRC}
         />
       )}
 
-      {/* Velo para legibilidad */}
+      {/* Velo para legibilidad del texto (vertical + lado izquierdo) */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-ink-deep/85 via-ink-deep/30 to-ink-deep/60"
+        className="absolute inset-0 bg-gradient-to-t from-ink-deep/90 via-ink-deep/40 to-ink-deep/70"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-r from-ink-deep/80 via-ink-deep/20 to-transparent"
       />
 
       <div className="relative mx-auto w-full max-w-6xl px-4 py-24 sm:px-6">

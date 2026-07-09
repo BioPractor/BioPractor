@@ -170,10 +170,20 @@ punto exacto:
 3. **Número de WhatsApp** (`src/lib/whatsapp.ts`): actualmente configurado
    con 314 444 6563 (+57). Verificar que sea el número definitivo antes de
    publicar.
-4. **Gancho de video del Inicio** (`src/components/Hero.tsx`): por ahora usa
-   formas animadas en CSS como gancho visual. Si el cliente entrega un video
-   real, agrégalo en `public/hero.mp4` y reemplaza el fondo animado por un
-   `<video autoPlay muted loop playsInline>`.
+## Videos del sitio
+
+El inicio usa dos videos de fondo tomados de [Pexels](https://www.pexels.com)
+(licencia gratuita, uso comercial permitido, sin atribución obligatoria):
+
+- `public/hero.mp4` — luz entre hojas, fondo del hero
+  (`src/components/Hero.tsx`, constante `HERO_VIDEO_SRC`).
+- `public/showcase.mp4` — gotas de agua sobre hojas, sección "naturaleza en
+  movimiento" (`src/components/Showcase.tsx`, constante `SHOWCASE_VIDEO_SRC`).
+
+Para cambiarlos, reemplaza el archivo en `public/` (mismo nombre) o edita la
+constante correspondiente. Si dejas la constante vacía (`""`), el sitio
+muestra una malla de gradiente animada de reemplazo sin depender de ningún
+archivo.
 
 ## Dominio y hosting
 
