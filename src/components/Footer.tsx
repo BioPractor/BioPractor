@@ -17,18 +17,13 @@ export default function Footer() {
 
       <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-4">
         <div className="md:col-span-2">
-          <div className="flex items-center gap-2">
-            <span
-              aria-hidden="true"
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-forest to-sky-dark text-cream"
-            >
-              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
-                <path d="M12 2C7 2 3 6.5 3 12c0 5.79 4.61 9.5 8.5 10 .1-1.28.06-2.55-.16-3.71C15.9 17.4 20 13.9 20 8.5 20 5.5 17 2 12 2Z" />
-              </svg>
-            </span>
-            <span className="font-display text-2xl font-semibold">BioPractor</span>
-          </div>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-cream/70">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo-full.svg"
+            alt="BioPractor"
+            className="h-28 w-auto drop-shadow-lg"
+          />
+          <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/70">
             Un camino de autocuidado a partir de productos naturales, para que
             gestiones tu bienestar a tu propio ritmo.
           </p>

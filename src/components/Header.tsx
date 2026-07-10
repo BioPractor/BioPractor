@@ -34,17 +34,18 @@ export default function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3.5 sm:px-6">
         <Link
           href="/"
-          className="group flex items-center gap-2"
+          className="group flex items-center gap-2.5"
           onClick={() => setOpen(false)}
         >
-          <span
+          {/* Isotipo de la marca (mano + hoja + columna). El nombre va como
+              texto al lado, así que la imagen es decorativa. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo-mark.svg"
+            alt=""
             aria-hidden="true"
-            className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-forest to-sky-dark text-cream shadow-sm transition-transform group-hover:scale-105"
-          >
-            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
-              <path d="M12 2C7 2 3 6.5 3 12c0 5.79 4.61 9.5 8.5 10 .1-1.28.06-2.55-.16-3.71C15.9 17.4 20 13.9 20 8.5 20 5.5 17 2 12 2Z" />
-            </svg>
-          </span>
+            className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
+          />
           <span className="font-display text-xl font-semibold tracking-tight text-forest-dark">
             BioPractor
           </span>
