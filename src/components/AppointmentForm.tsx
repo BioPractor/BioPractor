@@ -16,7 +16,7 @@ export default function AppointmentForm() {
     if (!canSubmit) return;
 
     const lines = [
-      `Hola BioPractor, quiero agendar una cita.`,
+      `Hola BioPractors, quiero agendar una cita.`,
       `Nombre: ${name}`,
       `Interés: ${service}`,
       date && `Fecha/hora preferida: ${date}`,
@@ -91,7 +91,7 @@ export default function AppointmentForm() {
         Solicitar cita por WhatsApp
       </button>
       <p className="text-xs text-ink/70">
-        Se abrirá WhatsApp con tu solicitud lista para enviar. BioPractor
+        Se abrirá WhatsApp con tu solicitud lista para enviar. BioPractors
         confirmará la fecha y hora contigo directamente.
       </p>
     </form>

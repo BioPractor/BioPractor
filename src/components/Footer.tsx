@@ -20,7 +20,7 @@ export default function Footer() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/logo-full.svg"
-            alt="BioPractor"
+            alt="BioPractors"
             className="h-28 w-auto drop-shadow-lg"
           />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/70">
@@ -93,7 +93,7 @@ export default function Footer() {
       </div>
 
       <div className="relative border-t border-cream/10 px-4 py-5 text-center text-xs text-cream/60 sm:px-6">
-        © {new Date().getFullYear()} BioPractor. Todos los derechos reservados.
+        © {new Date().getFullYear()} BioPractors. Todos los derechos reservados.
       </div>
     </footer>
   );

@@ -12,7 +12,7 @@ export default function AdminProtectedLayout({
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6">
           <div className="flex items-center gap-6">
             <Link href="/admin" className="text-lg font-extrabold text-forest-dark">
-              Panel BioPractor
+              Panel BioPractors
             </Link>
             <nav className="flex gap-4 text-sm font-semibold text-ink/70">
               <Link href="/admin" className="hover:text-forest-dark">

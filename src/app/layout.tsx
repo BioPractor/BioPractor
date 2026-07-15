@@ -23,11 +23,11 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: {
-    default: "BioPractor | Autocuidado natural",
-    template: "%s | BioPractor",
+    default: "BioPractors | Autocuidado natural",
+    template: "%s | BioPractors",
   },
   description:
-    "BioPractor te acompaña a gestionar tu autocuidado con productos naturales: encuentra soluciones por necesidad, desde masajes hasta bienestar emocional.",
+    "BioPractors te acompaña a gestionar tu autocuidado con productos naturales: encuentra soluciones por necesidad, desde masajes hasta bienestar emocional.",
 };
 
 export default function RootLayout({

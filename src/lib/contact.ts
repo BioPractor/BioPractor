@@ -19,9 +19,9 @@ export async function submitContact(input: ContactInput): Promise<ContactResult>
   }
 
   // [CONTENIDO PENDIENTE]: conectar aquí un servicio real de envío de correo
-  // (Resend, Nodemailer, etc.) con las credenciales de BioPractor.
+  // (Resend, Nodemailer, etc.) con las credenciales de BioPractors.
   // Por ahora el mensaje solo queda registrado en el log del servidor.
-  console.log("Nuevo mensaje de contacto BioPractor:", { name, email, message });
+  console.log("Nuevo mensaje de contacto BioPractors:", { name, email, message });
 
   return { ok: true };
 }

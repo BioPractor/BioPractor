@@ -61,7 +61,7 @@ export default function Hero() {
         </h1>
 
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream/80">
-          BioPractor no vende productos: abre oportunidades de autoayuda. Un
+          BioPractors no vende productos: abre oportunidades de autoayuda. Un
           camino sencillo para encontrar exactamente lo que tu cuerpo y tu
           mente necesitan hoy.
         </p>

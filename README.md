@@ -1,6 +1,6 @@
-# BioPractor — sitio web
+# BioPractors — sitio web
 
-Landing page para BioPractor (Fredy Urquijo), construida con Next.js 16 (App
+Landing page para BioPractors (Fredy Urquijo), construida con Next.js 16 (App
 Router), TypeScript y Tailwind CSS v4. El sitio ayuda a que las personas
 gestionen su autocuidado a partir de productos naturales, organizados por
 necesidad (cabeza, masajes, piel, cuerpo, sueño/emocional, aromaterapia).
@@ -166,7 +166,7 @@ punto exacto:
 2. **Envío del formulario de contacto** (`src/lib/contact.ts`): hoy el
    mensaje solo queda en el log del servidor. Conectar un servicio real de
    correo (por ejemplo [Resend](https://resend.com) o Nodemailer) con las
-   credenciales de BioPractor.
+   credenciales de BioPractors.
 3. **Número de WhatsApp** (`src/lib/whatsapp.ts`): actualmente configurado
    con 314 444 6563 (+57). Verificar que sea el número definitivo antes de
    publicar.

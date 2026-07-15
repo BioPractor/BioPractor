@@ -72,7 +72,7 @@ export default function Showcase() {
                 </svg>
               </span>
               <span className="font-display text-lg italic text-cream/90">
-                BioPractor
+                BioPractors
               </span>
             </div>
           </div>

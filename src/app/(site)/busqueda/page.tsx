@@ -7,7 +7,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Búsqueda",
   description:
-    "Busca en el catálogo de BioPractor por lo que necesitas: cabeza, masajes, piel, sueño y más.",
+    "Busca en el catálogo de BioPractors por lo que necesitas: cabeza, masajes, piel, sueño y más.",
 };
 
 export default async function BusquedaPage() {

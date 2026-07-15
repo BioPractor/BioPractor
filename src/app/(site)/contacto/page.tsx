@@ -5,7 +5,7 @@ import AppointmentForm from "@/components/AppointmentForm";
 export const metadata: Metadata = {
   title: "Contacto",
   description:
-    "Escríbenos o agenda una cita con BioPractor para recibir asesoría sobre tu camino de autocuidado natural.",
+    "Escríbenos o agenda una cita con BioPractors para recibir asesoría sobre tu camino de autocuidado natural.",
 };
 
 export default function ContactoPage() {
@@ -19,7 +19,7 @@ export default function ContactoPage() {
       </h1>
       <p className="mt-4 max-w-2xl text-lg text-ink/70">
         Cuéntanos qué necesitas o agenda una cita directamente. Fredy Urquijo
-        y el equipo de BioPractor te acompañan en cada paso.
+        y el equipo de BioPractors te acompañan en cada paso.
       </p>
 
       <div className="mt-10 grid gap-10 md:grid-cols-2">

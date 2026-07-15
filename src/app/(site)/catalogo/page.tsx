@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Catálogo",
   description:
-    "Explora el catálogo de BioPractor organizado por necesidad: cabeza, masajes, piel, cuerpo, sueño y aromaterapia.",
+    "Explora el catálogo de BioPractors organizado por necesidad: cabeza, masajes, piel, cuerpo, sueño y aromaterapia.",
 };
 
 export default async function CatalogoPage({

@@ -89,7 +89,7 @@ export default async function ProductPage({
           </WhatsAppCTAButton>
           <p className="text-xs text-ink/70">
             Te llevará a WhatsApp con un mensaje ya listo sobre este producto.
-            BioPractor se encarga del pedido, el pago y de resolver tus dudas.
+            BioPractors se encarga del pedido, el pago y de resolver tus dudas.
           </p>
         </div>
       </div>

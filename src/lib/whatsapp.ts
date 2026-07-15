@@ -6,12 +6,12 @@ export function buildWhatsAppLink(message: string): string {
 
 export function generalWhatsAppLink(): string {
   return buildWhatsAppLink(
-    "Hola BioPractor, quiero más información sobre sus productos de autocuidado natural."
+    "Hola BioPractors, quiero más información sobre sus productos de autocuidado natural."
   );
 }
 
 export function productWhatsAppLink(productName: string, reference: string): string {
   return buildWhatsAppLink(
-    `Hola BioPractor, quiero más información sobre "${productName}" (${reference}).`
+    `Hola BioPractors, quiero más información sobre "${productName}" (${reference}).`
   );
 }
