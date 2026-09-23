@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 const NAV_LINKS = [
   { href: "/", label: "Inicio" },
   { href: "/catalogo", label: "Catálogo" },
+  { href: "/terapias", label: "Terapias" },
   { href: "/busqueda", label: "Búsqueda" },
   { href: "/contacto", label: "Contacto" },
 ];
@@ -44,7 +45,7 @@ export default function Header() {
             src="/logo-mark.svg"
             alt=""
             aria-hidden="true"
-            className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
+            className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
           />
           <span className="font-display text-xl font-semibold tracking-tight text-forest-dark">
             BioPractors

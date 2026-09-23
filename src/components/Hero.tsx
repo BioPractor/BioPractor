@@ -50,58 +50,77 @@ export default function Hero() {
       />
 
       <div className="relative mx-auto w-full max-w-6xl px-4 py-24 sm:px-6">
-        <span className="animate-float inline-flex items-center gap-2 rounded-full border border-sage-light/30 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-sage-light backdrop-blur">
-          <span className="h-1.5 w-1.5 rounded-full bg-sky-light" />
-          Un camino, no una compra
-        </span>
-
-        <h1 className="mt-6 max-w-3xl font-display text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-          Gestiona tu autocuidado con productos{" "}
-          <span className="text-gradient italic">naturales</span>
-        </h1>
-
-        <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream/80">
-          BioPractors no vende productos: abre oportunidades de autoayuda. Un
-          camino sencillo para encontrar exactamente lo que tu cuerpo y tu
-          mente necesitan hoy.
-        </p>
-
-        <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-          <Link
-            href="/catalogo"
-            className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-forest to-sky-dark px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-sky-dark/20 transition-transform hover:scale-105"
-          >
-            Explorar el catálogo
-            <span className="transition-transform group-hover:translate-x-1">
-              →
+        <div className="flex flex-col-reverse items-center gap-12 lg:flex-row lg:justify-between lg:gap-10">
+          {/* Texto */}
+          <div className="w-full max-w-2xl">
+            <span className="animate-float inline-flex items-center gap-2 rounded-full border border-sage-light/30 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-sage-light backdrop-blur">
+              <span className="h-1.5 w-1.5 rounded-full bg-sky-light" />
+              Un camino, no una compra
             </span>
-          </Link>
-          <a
-            href={generalWhatsAppLink()}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full border border-cream/30 bg-white/5 px-7 py-3.5 text-sm font-bold text-cream backdrop-blur transition-colors hover:bg-white/10"
-          >
-            Más información
-          </a>
-        </div>
 
-        {/* Chips de datos */}
-        <dl className="mt-14 grid max-w-2xl grid-cols-3 gap-4">
-          {STATS.map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 backdrop-blur"
-            >
-              <dt className="font-display text-2xl font-semibold text-cream sm:text-3xl">
-                {stat.value}
-              </dt>
-              <dd className="mt-1 text-xs leading-snug text-cream/70">
-                {stat.label}
-              </dd>
+            <h1 className="mt-6 font-display text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+              Gestiona tu autocuidado con productos{" "}
+              <span className="text-gradient italic">naturales</span>
+            </h1>
+
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream/80">
+              BioPractors no vende productos: abre oportunidades de autoayuda.
+              Un camino sencillo para encontrar exactamente lo que tu cuerpo y
+              tu mente necesitan hoy.
+            </p>
+
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/catalogo"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-forest to-sky-dark px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-sky-dark/20 transition-transform hover:scale-105"
+              >
+                Explorar el catálogo
+                <span className="transition-transform group-hover:translate-x-1">
+                  →
+                </span>
+              </Link>
+              <a
+                href={generalWhatsAppLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full border border-cream/30 bg-white/5 px-7 py-3.5 text-sm font-bold text-cream backdrop-blur transition-colors hover:bg-white/10"
+              >
+                Más información
+              </a>
             </div>
-          ))}
-        </dl>
+
+            {/* Chips de datos */}
+            <dl className="mt-14 grid max-w-2xl grid-cols-3 gap-4">
+              {STATS.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4 backdrop-blur"
+                >
+                  <dt className="font-display text-2xl font-semibold text-cream sm:text-3xl">
+                    {stat.value}
+                  </dt>
+                  <dd className="mt-1 text-xs leading-snug text-cream/70">
+                    {stat.label}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+
+          {/* Logo grande de la marca */}
+          <div className="relative flex shrink-0 items-center justify-center">
+            <div
+              aria-hidden="true"
+              className="absolute h-64 w-64 rounded-full bg-sky/25 blur-3xl sm:h-80 sm:w-80"
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo-full.svg"
+              alt="BioPractors"
+              className="animate-float relative w-56 drop-shadow-2xl sm:w-64 lg:w-[23rem]"
+            />
+          </div>
+        </div>
       </div>
 
       {/* Indicador de scroll */}

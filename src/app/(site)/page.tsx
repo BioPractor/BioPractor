@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
+import Therapies from "@/components/Therapies";
 import CategoryGrid from "@/components/CategoryGrid";
 import ProductCard from "@/components/ProductCard";
 import Philosophy from "@/components/Philosophy";
@@ -19,6 +20,8 @@ export default async function Home() {
       <Hero />
 
       <Marquee />
+
+      <Therapies />
 
       <CategoryGrid />
 
