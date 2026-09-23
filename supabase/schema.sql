@@ -198,3 +198,27 @@ values
   ('colageno-hidrolizado-x1000ml-world-nutrition', 'Colageno hidrolizado x1000ml world nutrition', 'WN-228', array['colageno-belleza','inmunidad'], 31000, 'Bebida de colágeno hidrolizado con biotina', 'Bebida de colágeno hidrolizado con biotina, vitaminas C y E, que favorece piel, cabello, uñas, antioxidantes, elasticidad y regeneración celular. Presentación: 1000ml liquido. INVIMA: RSA-0007153-2018.', array['/products/colageno-hidrolizado-x1000ml-world-nutrition.webp']),
   ('7-colagenos', '7 Colagenos', 'WN-250', array['energia','colageno-belleza','articulaciones-huesos'], 32000, 'Ayuda a mejorar la elasticidad', 'Ayuda a mejorar la elasticidad, firmeza e hidratación de la piel, Fortalece los cartílagos, huesos y articulaciones, promoviendo la movilidad, Contribuye al buen funcionamiento del cuerpo y aporta energía Presentación: 1.100 ml Liquido. INVIMA: RSA-0021537-2022.', array['/products/7-colagenos.webp'])
 on conflict (slug) do nothing;
+
+-- ============================================================
+-- Citas / solicitudes de terapias a domicilio
+-- (se llenan cuando alguien reserva desde el sitio; el dueño las
+--  gestiona en /admin/citas: pendiente / atendida / cancelada)
+-- ============================================================
+create table if not exists appointments (
+  id uuid primary key default gen_random_uuid(),
+  name text not null,
+  phone text not null default '',
+  email text not null default '',
+  address text not null default '',
+  city text not null default '',
+  service text not null default '',
+  preferred_date text not null default '',
+  notes text not null default '',
+  source text not null default 'terapia',
+  status text not null default 'pendiente',
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+create index if not exists appointments_status_idx on appointments (status);
+create index if not exists appointments_created_idx on appointments (created_at desc);

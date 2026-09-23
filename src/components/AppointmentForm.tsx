@@ -23,6 +23,20 @@ export default function AppointmentForm() {
       notes && `Notas: ${notes}`,
     ].filter(Boolean);
 
+    // Guarda la cita en el panel admin (sin bloquear la apertura de WhatsApp).
+    fetch("/api/appointments", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      keepalive: true,
+      body: JSON.stringify({
+        name,
+        service,
+        preferredDate: date,
+        notes,
+        source: "cita",
+      }),
+    }).catch(() => {});
+
     window.open(buildWhatsAppLink(lines.join("\n")), "_blank", "noopener,noreferrer");
   }
 

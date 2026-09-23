@@ -44,6 +44,24 @@ export default function TherapyBookingForm({
       form.notes && `Notas: ${form.notes}`,
     ].filter(Boolean);
 
+    // Guarda la cita en el panel admin (sin bloquear la apertura de WhatsApp).
+    fetch("/api/appointments", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      keepalive: true,
+      body: JSON.stringify({
+        name: form.name,
+        phone: form.phone,
+        email: form.email,
+        address: form.address,
+        city: form.city,
+        service: therapyName,
+        preferredDate: form.date,
+        notes: form.notes,
+        source: "terapia",
+      }),
+    }).catch(() => {});
+
     window.open(
       buildWhatsAppLink(lines.join("\n")),
       "_blank",

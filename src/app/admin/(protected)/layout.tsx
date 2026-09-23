@@ -14,9 +14,12 @@ export default function AdminProtectedLayout({
             <Link href="/admin" className="text-lg font-extrabold text-forest-dark">
               Panel BioPractors
             </Link>
-            <nav className="flex gap-4 text-sm font-semibold text-ink/70">
+            <nav className="flex flex-wrap gap-4 text-sm font-semibold text-ink/70">
               <Link href="/admin" className="hover:text-forest-dark">
                 Productos
+              </Link>
+              <Link href="/admin/citas" className="hover:text-forest-dark">
+                Citas
               </Link>
               <Link href="/admin/productos/archivados" className="hover:text-forest-dark">
                 Archivados
