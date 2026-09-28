@@ -43,3 +43,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Archivos ajenos al proyecto (no versionar)
+Cotizacion_Plan_Siembra_Ley2173_BioPractors.xlsx
+plantilla-correo-waste.html
