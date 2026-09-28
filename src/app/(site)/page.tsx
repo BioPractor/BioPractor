@@ -2,7 +2,6 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import Therapies from "@/components/Therapies";
-import CategoryGrid from "@/components/CategoryGrid";
 import ProductCard from "@/components/ProductCard";
 import Philosophy from "@/components/Philosophy";
 import Showcase from "@/components/Showcase";
@@ -21,30 +20,35 @@ export default async function Home() {
 
       <Marquee />
 
+      {/* Lo principal: las terapias */}
       <Therapies />
 
-      <CategoryGrid />
+      <Philosophy />
 
+      <Showcase />
+
+      {/* Los productos quedan como complemento, en segundo plano */}
       <section className="bg-cream-soft py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <Reveal>
             <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
               <div>
                 <span className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-dark">
-                  Selección
+                  Además, un complemento
                 </span>
                 <h2 className="mt-3 font-display text-3xl font-semibold text-forest-dark sm:text-4xl lg:text-5xl">
-                  Productos destacados
+                  También encuentras productos naturales
                 </h2>
                 <p className="mt-4 max-w-xl text-lg text-ink/70">
-                  Una selección para empezar tu camino de autocuidado.
+                  Suplementos y productos que puedes sumar a tu proceso de
+                  bienestar, para acompañar tus terapias en casa.
                 </p>
               </div>
               <Link
                 href="/catalogo"
                 className="inline-flex items-center gap-2 rounded-full border border-forest-dark/20 px-5 py-2.5 text-sm font-bold text-forest-dark transition-colors hover:border-sky hover:text-sky-dark"
               >
-                Ver catálogo completo →
+                Ver todo el catálogo →
               </Link>
             </div>
           </Reveal>
@@ -58,10 +62,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-
-      <Philosophy />
-
-      <Showcase />
 
       <CtaBanner />
     </>

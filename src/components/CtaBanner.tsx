@@ -19,15 +19,15 @@ export default function CtaBanner() {
               <span className="text-gradient italic">asesoremos</span>?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-lg text-cream/80">
-              Agenda una cita o escríbenos directamente y te ayudamos a
-              encontrar el producto ideal para lo que necesitas hoy.
+              Agenda una terapia a domicilio o escríbenos directamente: te
+              orientamos para que autogestiones tu bienestar en casa.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <Link
-                href="/contacto"
+                href="/terapias"
                 className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3.5 text-sm font-bold text-forest-dark transition-transform hover:scale-105"
               >
-                Agendar cita
+                Agendar una terapia
               </Link>
               <a
                 href={generalWhatsAppLink()}

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { generalWhatsAppLink } from "@/lib/whatsapp";
 
 // Video de fondo del hero. Archivo en public/hero.mp4 (luz entre hojas,
 // banco gratuito Pexels, uso comercial sin atribución). Para cambiarlo,
@@ -8,9 +7,9 @@ import { generalWhatsAppLink } from "@/lib/whatsapp";
 const HERO_VIDEO_SRC = "/hero.mp4";
 
 const STATS = [
-  { value: "150+", label: "productos naturales" },
-  { value: "100%", label: "de origen natural" },
-  { value: "1 a 1", label: "asesoría personalizada" },
+  { value: "6+", label: "terapias a domicilio" },
+  { value: "100%", label: "medicina natural" },
+  { value: "1 a 1", label: "con un especialista" },
 ];
 
 export default function Hero() {
@@ -55,38 +54,36 @@ export default function Hero() {
           <div className="w-full max-w-2xl">
             <span className="animate-float inline-flex items-center gap-2 rounded-full border border-sage-light/30 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-sage-light backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-sky-light" />
-              Un camino, no una compra
+              Medicina natural alternativa
             </span>
 
             <h1 className="mt-6 font-display text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-              Gestiona tu autocuidado con productos{" "}
-              <span className="text-gradient italic">naturales</span>
+              Terapias naturales,{" "}
+              <span className="text-gradient italic">a domicilio</span>
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream/80">
-              BioPractors no vende productos: abre oportunidades de autoayuda.
-              Un camino sencillo para encontrar exactamente lo que tu cuerpo y
-              tu mente necesitan hoy.
+              Con un especialista en medicina natural alternativa que te
+              acompaña y te orienta para que autogestiones tu bienestar en casa.
+              Y si lo necesitas, también productos naturales.
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/catalogo"
+                href="/terapias"
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-forest to-sky-dark px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-sky-dark/20 transition-transform hover:scale-105"
               >
-                Explorar el catálogo
+                Ver las terapias
                 <span className="transition-transform group-hover:translate-x-1">
                   →
                 </span>
               </Link>
-              <a
-                href={generalWhatsAppLink()}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/catalogo"
                 className="inline-flex items-center justify-center rounded-full border border-cream/30 bg-white/5 px-7 py-3.5 text-sm font-bold text-cream backdrop-blur transition-colors hover:bg-white/10"
               >
-                Más información
-              </a>
+                Ver productos
+              </Link>
             </div>
 
             {/* Chips de datos */}

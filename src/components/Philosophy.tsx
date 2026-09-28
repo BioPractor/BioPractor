@@ -23,7 +23,7 @@ export default function Philosophy() {
           <p className="mt-6 font-display text-3xl font-medium leading-[1.25] text-forest-dark sm:text-4xl lg:text-5xl">
             No vendemos productos,{" "}
             <span className="text-gradient italic">abrimos caminos</span>. Cada
-            fórmula es una oportunidad de escuchar a tu cuerpo, cuidar tu mente
+            terapia es una oportunidad de escuchar a tu cuerpo, cuidar tu mente
             y construir hábitos de bienestar que duran.
           </p>
         </Reveal>
