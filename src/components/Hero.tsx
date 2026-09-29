@@ -57,9 +57,9 @@ export default function Hero() {
               Medicina natural alternativa
             </span>
 
-            <h1 className="mt-6 font-display text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-              Terapias naturales,{" "}
-              <span className="text-gradient italic">a domicilio</span>
+            <h1 className="mt-6 font-display text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
+              Autogestión para una vida más saludable,{" "}
+              <span className="text-gradient italic">tu salud en tus manos</span>
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream/80">
