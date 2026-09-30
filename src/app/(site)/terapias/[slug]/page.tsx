@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getTherapyBySlug, therapies } from "@/lib/therapies";
-import TherapyIcon from "@/components/TherapyIcon";
+import TherapyVideo from "@/components/TherapyVideo";
 import TherapyBookingForm from "@/components/TherapyBookingForm";
 
 export function generateStaticParams() {
@@ -41,19 +41,30 @@ export default async function TherapyPage({
         ← Todas las terapias
       </Link>
 
-      <div className="mt-6 grid gap-10 lg:grid-cols-2">
-        {/* Info de la terapia */}
-        <div>
-          <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-forest to-sky-dark text-cream shadow-lg shadow-sky-dark/20">
-            <TherapyIcon icon={therapy.icon} className="h-8 w-8" />
-          </span>
-          <span className="mt-6 block text-xs font-semibold uppercase tracking-[0.3em] text-sky-dark">
+      {/* Banner de video con el nombre grande */}
+      <div className="relative mt-6 aspect-[16/9] overflow-hidden rounded-3xl sm:aspect-[16/7]">
+        <TherapyVideo
+          src={`/therapies/${therapy.slug}.mp4`}
+          className="h-full w-full"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-t from-ink-deep/90 via-ink-deep/30 to-ink-deep/20"
+        />
+        <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+          <span className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-light">
             Terapia a domicilio
           </span>
-          <h1 className="mt-3 font-display text-4xl font-semibold text-forest-dark sm:text-5xl">
+          <h1 className="mt-2 font-display text-4xl font-semibold text-cream drop-shadow-lg sm:text-5xl lg:text-6xl">
             {therapy.name}
           </h1>
-          <p className="text-gradient mt-4 font-display text-2xl font-medium italic leading-snug sm:text-3xl">
+        </div>
+      </div>
+
+      <div className="mt-10 grid gap-10 lg:grid-cols-2">
+        {/* Info de la terapia */}
+        <div>
+          <p className="text-gradient font-display text-2xl font-medium italic leading-snug sm:text-3xl">
             {therapy.tagline}
           </p>
           <p className="mt-6 leading-relaxed text-ink/80">

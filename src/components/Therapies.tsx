@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { therapies } from "@/lib/therapies";
-import TherapyIcon from "./TherapyIcon";
+import TherapyVideo from "./TherapyVideo";
 import Reveal from "./Reveal";
 
 export default function Therapies() {
@@ -34,33 +34,40 @@ export default function Therapies() {
           </div>
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {therapies.map((therapy, i) => (
             <Reveal key={therapy.slug} delay={(i % 3) * 90}>
               <Link
                 href={`/terapias/${therapy.slug}`}
-                className="group flex h-full flex-col gap-4 rounded-3xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-sky/50 hover:bg-white/[0.08]"
+                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-sky/50 hover:bg-white/[0.08]"
               >
-                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-forest to-sky-dark text-cream shadow-lg shadow-sky-dark/20 transition-transform duration-300 group-hover:scale-110">
-                  <TherapyIcon icon={therapy.icon} className="h-7 w-7" />
-                </span>
-                <div>
-                  <h3 className="font-display text-2xl font-semibold text-cream">
+                <div className="relative aspect-video overflow-hidden [&_video]:transition-transform [&_video]:duration-700 group-hover:[&_video]:scale-110">
+                  <TherapyVideo
+                    src={`/therapies/${therapy.slug}.mp4`}
+                    className="h-full w-full"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 bg-gradient-to-t from-ink-deep/85 via-ink-deep/10 to-transparent"
+                  />
+                  <h3 className="absolute inset-x-4 bottom-3 font-display text-2xl font-semibold text-cream drop-shadow-lg">
                     {therapy.name}
                   </h3>
-                  <p className="mt-1 text-sm font-medium text-sky-light">
+                </div>
+                <div className="flex flex-1 flex-col gap-3 p-6">
+                  <p className="text-sm font-semibold text-sky-light">
                     {therapy.tagline}
                   </p>
-                </div>
-                <p className="text-sm leading-relaxed text-cream/70">
-                  {therapy.description}
-                </p>
-                <span className="mt-auto inline-flex items-center gap-1.5 pt-2 text-sm font-bold text-cream">
-                  Reservar a domicilio
-                  <span className="transition-transform group-hover:translate-x-1">
-                    →
+                  <p className="text-sm leading-relaxed text-cream/70">
+                    {therapy.description}
+                  </p>
+                  <span className="mt-auto inline-flex items-center gap-1.5 pt-2 text-sm font-bold text-cream">
+                    Reservar a domicilio
+                    <span className="transition-transform group-hover:translate-x-1">
+                      →
+                    </span>
                   </span>
-                </span>
+                </div>
               </Link>
             </Reveal>
           ))}
