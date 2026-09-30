@@ -4,7 +4,8 @@ export type TherapyIconKey =
   | "earth"
   | "spine"
   | "sun"
-  | "light";
+  | "light"
+  | "wave";
 
 export type Therapy = {
   slug: string;
@@ -21,7 +22,8 @@ export const therapies: Therapy[] = [
     slug: "fitoterapia",
     name: "Fitoterapia",
     icon: "leaf",
-    tagline: "El poder de las plantas medicinales",
+    tagline:
+      "Aprende a escuchar tu cuerpo y a darle lo que requiere para potenciarlo en tu hogar.",
     description:
       "Uso terapéutico de plantas medicinales y extractos naturales para acompañar tu salud de forma suave y respetuosa con tu cuerpo.",
   },
@@ -29,7 +31,7 @@ export const therapies: Therapy[] = [
     slug: "hidroterapia",
     name: "Hidroterapia",
     icon: "drop",
-    tagline: "El agua como fuente de bienestar",
+    tagline: "Tu salud en tus manos.",
     description:
       "Aplicación del agua en distintas temperaturas y formas —baños, compresas y contrastes— para aliviar molestias y revitalizar el cuerpo.",
   },
@@ -37,7 +39,7 @@ export const therapies: Therapy[] = [
     slug: "geoterapia",
     name: "Geoterapia",
     icon: "earth",
-    tagline: "La tierra que equilibra",
+    tagline: "Aprende a cuidarte en el lugar que más amas.",
     description:
       "Uso de arcillas y barros naturales para desintoxicar, desinflamar y aliviar aprovechando las propiedades de la tierra.",
   },
@@ -45,7 +47,8 @@ export const therapies: Therapy[] = [
     slug: "quiropraxia",
     name: "Quiropraxia",
     icon: "spine",
-    tagline: "Alivio y movilidad para tu cuerpo",
+    tagline:
+      "El arte de cuidarte de forma natural, en tu propio espacio y tu propio ritmo.",
     description:
       "Ajustes y maniobras manuales para liberar tensiones, mejorar la movilidad y devolverle equilibrio a tu columna y articulaciones.",
   },
@@ -53,7 +56,8 @@ export const therapies: Therapy[] = [
     slug: "helioterapia",
     name: "Helioterapia",
     icon: "sun",
-    tagline: "La energía del sol",
+    tagline:
+      "La autogestión con terapias naturales es el camino para fortalecer el cuerpo, equilibrar la mente y activar tu propia energía vital.",
     description:
       "Aprovechamiento controlado y guiado de la luz solar para estimular tu vitalidad y bienestar general.",
   },
@@ -61,9 +65,18 @@ export const therapies: Therapy[] = [
     slug: "fototerapia",
     name: "Fototerapia",
     icon: "light",
-    tagline: "Luz que revitaliza",
+    tagline: "Tu hogar, tu santuario de sanación natural.",
     description:
       "Uso terapéutico de la luz para acompañar tus procesos de recuperación, descanso y bienestar.",
+  },
+  {
+    slug: "talasoterapia",
+    name: "Talasoterapia",
+    icon: "wave",
+    tagline:
+      "Despierta el poder de tu propia sanación en la comodidad de tu hogar.",
+    description:
+      "Uso terapéutico del agua de mar y los elementos marinos —sal, algas y minerales— para revitalizar el cuerpo, favorecer la circulación y la relajación.",
   },
 ];
 

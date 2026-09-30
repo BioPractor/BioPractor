@@ -53,10 +53,10 @@ export default async function TherapyPage({
           <h1 className="mt-3 font-display text-4xl font-semibold text-forest-dark sm:text-5xl">
             {therapy.name}
           </h1>
-          <p className="mt-2 text-lg font-medium text-sky-dark">
+          <p className="text-gradient mt-4 font-display text-2xl font-medium italic leading-snug sm:text-3xl">
             {therapy.tagline}
           </p>
-          <p className="mt-5 leading-relaxed text-ink/80">
+          <p className="mt-6 leading-relaxed text-ink/80">
             {therapy.description}
           </p>
 
